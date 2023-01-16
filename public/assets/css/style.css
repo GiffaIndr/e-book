@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+  --primary-color: #04d9c7;
+  --secondary :#ffd151;
+  --bg: #04d9c7;
+  --black: #151810;
+  --white: #fff;
+  --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+}
+span{
+color: #04d9c7;
+}
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: #04d9c7;
+  border-radius: 5rem;
+}
+
+section{
+  padding: 2rem 7%;
+}
+
+.heading{
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-bottom: 3rem;
+  color:#04d9c7;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+.heading span{
+  color: #ffd151;
+  text-transform: uppercase;
+}
+
+.btns{
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1.3rem 3.5rem;
+  font-size: 1.7rem;
+  color: var(--white);
+  border-radius: .5rem;
+  background: #04d9c7;
+  cursor: pointer;
+}
+
+.btns:hover{
+  color: var(--white);
+  background: #ffd151;
+  box-shadow: var(--box-shadow);
+}
+
+/* header */
+
+.header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+}
+
+.header .logo{
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--black);
+}
+
+.header .logo i{
+  color: #04d9c7;
+  padding-right: .5rem;
+}
+
+.header .navbar a{
+  font-size: 1.7rem;
+  color: var(--black);
+  margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+  color: #04d9c7;
+}
+
+.header .icons div{
+  font-size: 2.5rem;
+  margin-left: 1.7rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header .icons div:hover{
+  color: #04d9c7;
+}
+
+#menu-btn {
+  display: none;
+}
+/* shopping-cart */
+
+.header .shopping-cart{
+    position: absolute;
+    top: 115%; right: -105%;
+    background: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    padding: 2rem;
+  }
+  
+  .header .shopping-cart.active{
+    right: 2rem;
+    transition: .4s linear;
+  }
+  
+  .header .shopping-cart .box{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .header .shopping-cart .box .fa-times{
+    position: absolute;
+    top: 50%; right: 2rem;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #8BBA83;
+    cursor: pointer;
+  }
+  
+  .header .shopping-cart .btn{
+    text-align: center;
+    width: 100%;
+  }
+  
+  .header .search-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width: 50rem;
+    height:5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .header .search-form.active{
+    right:2rem;
+    transition: .4s linear;
+  }
+  
+  .header .search-form input{
+    height:100%;
+    width:100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:0 1.5rem;
+  }
+  
+  .header .search-form label{
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+  }
+  
+  .header .search-form label:hover{
+    color: #8BBA83;
+  }
+  
+  .header .login-form{
+    position: absolute;
+    top: 115%; right: -105%;
+    background: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    padding: 2rem;
+  }
+  
+  .header .login-form.active{
+    right: 2rem;
+    transition: .4s linear;
+  }
+  
+  .header .login-form h3{
+    color: var(--black);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: .7rem;
+  }
+  
+  .header .login-form .box{
+    margin: .7rem 0;
+    border: .1rem solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.2rem;
+    font-size: 1.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+    width: 100%;
+  }
+  
+  .header .login-form .remember{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .7rem 0;
+  }
+  
+  .header .login-form .remember label{
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+  }
+  
+  .header .login-form .btn{
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+  
