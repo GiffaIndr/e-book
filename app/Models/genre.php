@@ -5,21 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class commer extends Model
+class genre extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
-        'penulis',
         'genre',
-        'sinopsis',
-        'penerbit',
-        'buku',
-        'done_time',
-        'views',
-        'isi',
-        'image',
     ];
-
+    public function genre(){
+        return $this->hasMany('App\Commer', 'genre', 'id');
+    }
 }
-

@@ -20,6 +20,16 @@
                 </ul>
             </div>
         @endif 
+        @if (session('successLogin'))
+    <div class="alert alert-success">
+        {{ session('successLogin') }}
+    </div>
+    @endif
+    @if (session('faillogin'))
+    <div class="alert alert-danger">
+        {{ session('faillogin') }}
+    </div>
+    @endif
             <form action="{{route('login.auth')}}" method="post">
                 @csrf
             <div class="inputBx">

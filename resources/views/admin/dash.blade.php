@@ -4,6 +4,12 @@
 
 
     @csrf
+    <style>
+      *{
+
+      }
+    </style>
+    <div class="card" style="background-color: grey;">
     <div class="container">
         <div class="card shadow" style="
             padding-left: 150px; 
@@ -24,9 +30,14 @@
     </ul>
   </span>
   @endif
-  @if(Session::get('berhasilTambah'))
+  @if (session('hapus'))
+    <div class="alert alert-danger">
+        {{ session('hapus') }}
+    </div>
+    @endif
+  @if(Session::get('suksesTambah'))
   <div class="alert alert-success">
-  {{Session::get('berhasilTambah')}}</div>
+  {{Session::get('suksesTambah')}}</div>
   @endif
                <hr>
     <div class="form-row" style="padding-top: 20px;">
@@ -46,7 +57,14 @@
             <input type="file" class="form-control" name="image" placeholder="image">
           </div>
         <div class="col" style="">
-          <input type="text" class="form-control" name="genre" placeholder="genre">
+          <select name="genre" placeholder="Category" id="genre">
+            @foreach ($category as $item)
+                
+            
+            <option hidden></option>
+            <option value="{{$item->genre}}">{{$item->genre}}</option>
+            @endforeach
+          </select>
         </div>
     </div>
       <div class="form-group " style="">
@@ -60,8 +78,10 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </div></div>
 </div>
+<div class="card shadow" style="margin-left: 200px; margin-top: 20px" >
   </form>
-  <div class="container" style="margin-top: 50px; margin-left: 200px; padding-right: 200px;">
+
+  <div class="container" style="margin-top: 50px; margin-left: 90px; padding-right: 200px;">
   <table class="table" style="">
     <thead>
       <tr>
@@ -84,11 +104,19 @@
         <td>{{$commer->buku}}</td>
         <td>{{$commer->penulis}}</td>
         <td>{{$commer->penerbit}}</td>
-        <td>{{$commer->sinopsis}}</td>
+        <td><a href="{{route('detail', $commer->id)}}">Lihat</a></td>
+        <td> <form  action="{{route('delete', $commer->id)}}" method="post">
+          @method('DELETE')
+          @csrf
+          <br>
+          <button type="submit" class="fas fa-trash" style="border: 20px solid rgba(255, 255, 255, 0.573); border-radius:20%; font-size:15px;"></button>
+        </form></td>
       </tr>
     </tbody>
 @endforeach
 
   </table>
+  </div>
+  </div>
   </div>
 @endsection

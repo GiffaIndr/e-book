@@ -19,8 +19,8 @@
     />
     <style>
       .list-group-item.active {
-    background-color: #fdae0d;
-    border-color: rgb(255, 68, 0);
+    background-color: #0385db;
+    border-color: rgb(21, 181, 32);
 }
     </style>
 </head>     
@@ -37,18 +37,16 @@
             class="list-group-item list-group-item-action py-2 ripple active"
             aria-current="true"
           >
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Add Book</span>
+            <i class="fas fa-book fa-fw me-3"></i><span>Dashboard</span>
           </a><br>
-          {{-- @endif
+          {{-- @endifq
           @if (Auth::user()->role == 'user') --}}
-          <a href="{{route('data')}}" class="list-group-item list-group-item-action py-2 ripple ">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>dashboard</span>
-          </a>
+
           <a href="{{route('users')}}" class="list-group-item list-group-item-action py-2 ripple ">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Users</span>
+            <i class="fas fa-user fa-fw me-3"></i><span>Users</span>
           </a>
           <a href="{{route('category')}}" class="list-group-item list-group-item-action py-2 ripple ">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Category book</span>
+            <i class="fas fa- fa-fw me-3"></i><span>Category book</span>
           </a>
       {{-- @endif --}}
       <a href="{{route('logout')}}" class="list-group-item list-group-item-action py-2 ripple">
@@ -77,13 +75,14 @@
         </button>
   
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
-          <img
+        <a class="navbar-brand shadow" style=" border-radius: 30px; padding-left: 700px; padding-right: 870px;" href="#">
+          <img class="center"
             src="{{asset('assets/img/wikrama.png')}}"
             height="50"
+            {{-- style="margin-left:50px;" --}}
             alt=""
             loading="lazy" 
-> SMK Wikrama</a>
+></a>
   </header>
   
   <main style="margin-top: 58px;">

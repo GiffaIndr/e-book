@@ -23,6 +23,9 @@ class User extends Authenticatable
         'address',
         'no',
         'password',
+        'role',
+        'count',
+        
     ];
     public function commer(){
         return $this->hasOne(commer::class);

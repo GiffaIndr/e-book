@@ -32,21 +32,15 @@
     <header class="header">
         <a href="#" class="logo"> <i class="fas "></i>WIK<span>Book</span> </a>
         <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#product">Populer</a>
-            <a href="#about">Buku</a>
-            <a href="#review">review</a>
-            <a href="#contact">contact</a>
+            <a href="#">home</a>
+            <a href="#favorite">Populer</a>
+            <a href="#buku">Buku</a>
+        
         </nav>
         @Auth
-        <div class="icons">
-            {{-- <div class="fas">Lihat Buku</div> --}}
-            <div  class="fas fa-user"> {{Auth::user()->name}}</div>
-        </div>
-        <div class="shopping-cart">
-            <a href="#" class="btn">checkout</a>
-        </div>
+        
         <nav class="navbar">
+            <div  class="fas fa-user" style="font-size: 15px; margin-right:25px;"> {{Auth::user()->name}}</div>
             <a href="{{route('logout')}}">logout</a>
         </nav>
         
